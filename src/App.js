@@ -1,13 +1,29 @@
+import React from "react";
+import List from "./List";
+import Search from "./Search";
 import "./App.css";
 
-const title = "React";
+const list = [
+  {
+    title: "React",
+    url: "https://reactjs.org",
+    obectID: 0,
+  },
+  {
+    title: "Redux",
+    url: "https//redux.js.org/",
+    obectID: 1,
+  },
+];
+
 function App() {
   return (
     <div className="App">
-      <h1>Hello {title}</h1>
+      <h1>My Hacker Stories</h1>
 
-      <label htmlFor="search">Search: </label>
-      <input id="search" type="text" />
+      <Search />
+      <hr />
+      <List />
     </div>
   );
 }
