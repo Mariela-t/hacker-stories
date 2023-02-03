@@ -1,27 +1,11 @@
 import React from "react";
+import Item from "./Item";
 
-const list = [
-  {
-    title: "React",
-    url: "https://reactjs.org",
-    obectID: 0,
-  },
-  {
-    title: "Redux",
-    url: "https//redux.js.org/",
-    obectID: 1,
-  },
-];
-
-export default function List() {
+export default function List(props) {
   return (
     <ul>
-      {list.map((item) => (
-        <li key={item.obectID}>
-          <span>
-            <a href={item.url}>{item.title}</a>
-          </span>
-        </li>
+      {props.list.map((item) => (
+        <Item key={item.obectID} item={item} />
       ))}
     </ul>
   );
