@@ -1,7 +1,7 @@
 import React from "react";
 import List from "./List";
-import Search from "./Search";
 import "./App.css";
+import InputWithLabel from "./InputWithLabel";
 
 const useSemiPersistentState = (key, initialState) => {
   const [value, setValue] = React.useState(
@@ -48,8 +48,13 @@ const App = () => {
   return (
     <div className="App">
       <h1>My Hacker Stories</h1>
+      <InputWithLabel
+        id="search"
+        label="search"
+        value={searchTerm}
+        onInputChange={handleSearch}
+      />
 
-      <Search search={searchTerm} onSearch={handleSearch} />
       <hr />
       <List list={searchedStories} />
     </div>
